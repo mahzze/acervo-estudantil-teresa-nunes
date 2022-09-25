@@ -11,23 +11,28 @@
 
 <body>
   <?php
-  if ($_SESSION) {
-
+  session_start();
+  if ($_SESSION["logged"] == true) {
     echo '
     <header class="header">Logo</header>
     <main class="container">
       <section>Side A</section>
-      <main>main: onde os livros devem aparecer para Download</main>
+  <main>
+  main: onde os livros devem aparecer para Download <br> <a href="./logout.php"><button>LOGOUT</button></a>
+      </main>      
       <section>Side B</section>
     </main>
     <footer class="footer">Footer</footer>
   ';
   } else {
     echo '
-    <form action="login.php" method="post>
-      <input type="text" name="nome" placeholder="nome" aria-placeholder="nome">
-      <input type="text" name="curso" placeholder="curso" aria-placeholder="curso">
-      <input type="password" name="senha" placeholder="senha" aria-placeholder="senha">
+    <form action="login.php" method="post">
+  
+  <input type="text" name="nome" placeholder="nome" aria-placeholder="nome">
+  
+  <input type="text" name="curso" placeholder="curso" aria-placeholder="curso">
+  
+  <input type="password" name="senha" placeholder="senha" aria-placeholder="senha">
       <input type="submit" value="Conectar">
     </form>
   ';
