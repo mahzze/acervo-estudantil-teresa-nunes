@@ -1,0 +1,17 @@
+@import "./geral.css";
+
+body{
+  background: rgba(220, 220, 220);
+}
+
+.main{
+  padding: 10
+}
+
+#id{
+  background: var(--bckg-color); 
+}
+
+#inputModal{
+  width: clamp(60vw, 700px, 90vw);
+}

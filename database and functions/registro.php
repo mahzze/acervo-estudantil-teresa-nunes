@@ -10,3 +10,5 @@ $senha = password_hash($senha, PASSWORD_BCRYPT, array(PASSWORD_BCRYPT_DEFAULT_CO
 $query = $connection->prepare("INSERT INTO usuarios(curso, nome, senha) VALUES (?,?,?);");
 $query->bind_param("sss", $curso, $nome, $senha);
 $query->execute();
+
+header("Location: ./index.php");

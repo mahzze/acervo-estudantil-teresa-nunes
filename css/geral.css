@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,400&display=swap');
+
+@font-face {
+    font-family: Coolvetica;
+    src: url(./Fonts/coolvetica.otf)
+}
+
+@font-face {
+    font-family: Straightler;
+    src: url(./Fonts/straightler.otf)
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+:root {
+    --primary-color   : #B3E0DD;
+    --secondary-color : #65C0BC;
+    --accent-color    : #E6F5F4;
+    --bckg-color      : #00968F;
+}
+
+
