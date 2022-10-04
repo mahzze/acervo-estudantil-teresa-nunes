@@ -6,4 +6,5 @@
 .env.test.local
 .env.production.local
 
-env.php
+composer.*
+vendor/

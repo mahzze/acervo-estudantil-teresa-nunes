@@ -23,7 +23,7 @@ if ($query->bind_result($resSenha)) {
     echo '  
     <script type="text/javascript">
       window.alert("Conectado com sucesso!");
-      window.location.href = "./index.php";
+      window.location.href = "../index.php";
     </script>
     ';
   }
@@ -31,7 +31,7 @@ if ($query->bind_result($resSenha)) {
   echo '  
   <script type="text/javascript">
     window.alert("combinação inválida de usuario/ID/senha");
-    window.location.href = "./index.php"; 
+    window.location.href = "../index.php"; 
   </script>
   ';
 }

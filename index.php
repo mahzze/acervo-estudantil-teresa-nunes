@@ -21,7 +21,7 @@ session_start();
     <main class="container">
       <section>Side A</section>
       <main>
-        main: ' . $content . '  <br> <a href="./database and functions/logout.php"><button>LOGOUT</button></a>
+        main: ' . $content . '  <br> <a href="./logout.php"><button>LOGOUT</button></a>
       </main>      
       <section>Side B</section>
     </main>
@@ -30,7 +30,7 @@ session_start();
   } else {
     echo '
   <main class="loginMain">
-    <form class="inputs" action="./database and functions/login.php" method="post">
+    <form class="inputs" action="./login.php" method="post">
       <input type="text" name="nome" placeholder="nome" aria-placeholder="nome">
       <input type="number" name="uid" placeholder="ID de Usuário" aria-placeholder="ID de Usuário">
       <input type="password" name="senha" placeholder="senha" aria-placeholder="senha">
