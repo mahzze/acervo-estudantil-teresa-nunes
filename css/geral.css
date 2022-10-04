@@ -15,13 +15,17 @@
     padding: 0;
     box-sizing: border-box;
     text-align: center;
+    font-family: Poppins;
 }
 
 :root {
     --primary-color   : #B3E0DD;
     --secondary-color : #65C0BC;
     --accent-color    : #E6F5F4;
-    --bckg-color      : #00968F;
+    --extra-color     : #00968F;
+    --back-color      : #0C210E;
 }
 
-
+a {
+  text-decoration: none;
+}

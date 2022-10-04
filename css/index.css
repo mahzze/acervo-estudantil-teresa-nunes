@@ -1,20 +1,15 @@
 @import "./geral.css";
 
-/*  */
-
 body{
-  background: var(--bckg-color);
-}
-
-.container {
-    display:grid;
-    grid-template-columns: 1fr 5fr 1fr;
-}
-
-.container > main {
-    background: var(--secondary-color);
-    min-width: clamp(70%, 800px, 90vw);
-    min-height: 60vh;
+  background: linear-gradient(135deg, var(--back-color), var(--extra-color));
+  background-attachment: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
@@ -27,4 +22,45 @@ body{
     bottom: 0;
     min-width: 100vw;
     min-height: 20vh;
+}
+
+/* LOGGED IN */
+.container {
+    display:grid;
+    grid-template-columns: 1fr 5fr 1fr;
+}
+
+.container > main {
+    background: var(--secondary-color);
+    min-width: clamp(70%, 800px, 90vw);
+    min-height: 60vh;
+}
+
+/* UNLOGGED */
+
+.loginMain {
+    background: #1E1E1E;
+    display: flex;
+    flex-direction: column;
+    padding: 10% 0;
+    margin: 20vh;
+    height: 60%;
+    width: 70%;
+    border-radius: 14px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.inputs input{
+    width: 70%;
+    border-radius: 50px;
+}
+
+.linkReg {
+    color: var(--accent-color);
 }

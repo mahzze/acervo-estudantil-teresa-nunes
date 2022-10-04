@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +14,6 @@
 
 <body>
   <?php
-  session_start();
   if (isset($_SESSION["logged"])) {
     $content = isset($_SESSION["admin"]) ? '<a href="./admin.php"><button>admin page</button></a>' : 'onde os livros devem aparecer para Download';
     echo '
@@ -27,14 +29,17 @@
     ';
   } else {
     echo '
-    <main class="loginMain">
-     <form action="./database and functions/login.php" method="post">
-        <input type="text" name="nome" placeholder="nome" aria-placeholder="nome">
-        <input type="number" name="uid" placeholder="ID de Usuário" aria-placeholder="ID de Usuário">
-        <input type="password" name="senha" placeholder="senha" aria-placeholder="senha">
-        <input type="submit" value="Conectar">
-      </form>
-    </main>
+  <main class="loginMain">
+    <form class="inputs" action="./database and functions/login.php" method="post">
+      <input type="text" name="nome" placeholder="nome" aria-placeholder="nome">
+      <input type="number" name="uid" placeholder="ID de Usuário" aria-placeholder="ID de Usuário">
+      <input type="password" name="senha" placeholder="senha" aria-placeholder="senha">
+      <input type="submit" value="Conectar">
+    </form>
+    <div>
+      <p>Não possui um acesso? <a class="linkReg" href="./registroForm.html">Cadastre-se aqui</a></p>
+    </div>
+  </main>
     ';
   }
   ?>
