@@ -3,7 +3,12 @@
 
 Data de desenvolvimento: 22/09/2022 - ??/??/????
 
-Desenvolvido por: 
+#O que fazer:
+- Detereminar a forma de salvar e utilizar os arquivos (blob ou folder)
+- Organizar o design do site
+- Emails para mostrar a ID
+
+##Desenvolvido por: 
 
 - Gabriela Euzébio
 - Giovanna Verediano de Oliveira

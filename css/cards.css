@@ -1,0 +1,35 @@
+@import "./geral.css";
+
+.card{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: rgba(50, 50, 50, 0.2) 4px 4px 4px;
+}
+
+@media handheld {
+  @media(max-width: 250px){
+    .card{
+      width: 90%;
+    }
+  }
+  @media (max-height: 250px){
+    .card{
+      height: 80%;
+    }
+  }
+}
+
+@media screen{
+  @media (max-width: 500px){
+    .card{
+      width: 40%;
+    }
+  }
+  @media (max-height: 500px){
+    .card{
+      height: 40%;
+    }
+  }
+}
+

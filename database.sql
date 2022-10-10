@@ -5,7 +5,8 @@ USE acervo_teresa_nunes;
 CREATE TABLE usuarios (
   	uid INT AUTO_INCREMENT PRIMARY KEY,
     curso VARCHAR(30),
-    nome VARCHAR(25),
+    nome VARCHAR(45),
+    email VARCHAR(45),
     senha VARCHAR(72)
 );
 

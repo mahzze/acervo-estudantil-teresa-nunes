@@ -27,39 +27,51 @@ body{
 
 /* LOGGED IN */
 .container {
-    display:grid;
-    grid-template-columns: 1fr 5fr 1fr;
-}
-
-.container > main {
-    background: var(--secondary-color);
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    background: #fff;
     min-width: clamp(70%, 800px, 90vw);
     min-height: 60vh;
 }
 
 /* UNLOGGED */
-
 .loginMain {
     background: #1E1E1E;
     display: flex;
     flex-direction: column;
     padding: 10% 0;
-    margin: 20vh;
     height: 60%;
     width: 70%;
     border-radius: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .inputs {
+    height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
+    justify-content: space-around;
+    margin-bottom: 1rem;
 }
 
 .inputs input{
     width: 70%;
     border-radius: 50px;
+    margin-bottom: .5rem;
+}
+
+.input:last-child(){
+    margin-bottom: 5%;
+}
+
+.textReg {
+    color:var(--extra-color);
 }
 
 .linkReg {

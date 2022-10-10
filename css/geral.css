@@ -15,7 +15,8 @@
     padding: 0;
     box-sizing: border-box;
     text-align: center;
-    font-family: Poppins;
+    font-family: Poppins, Coolvetica, sans-serif;
+    outline: none;
 }
 
 :root {

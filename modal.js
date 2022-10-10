@@ -1,3 +1,4 @@
-let modal = document.document.querySelector('#inputModal')
-
-const add = () => modal.style.display == "none" ? "block" : "none"
+function addModal() {
+  const modal = document.querySelector('div#modal')
+  return modal.style.display = (modal.style.display == "none") ? "block" : "none"
+}
