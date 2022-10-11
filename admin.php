@@ -14,14 +14,16 @@ if (!isset($_SESSION["admin"])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="./css/admin.css" rel="stylesheet">
+  <link href="./css/cards.css" rel="stylesheet">
 </head>
 
 <body>
+  <section class="logo">Logo</section>
   <main class="main">
     <div id="modal">
       <form action="./addLivro.php" method="post" enctype="multipart/form-data">
         <input class="inp" id="nome" name="nome" type="text" placeholder="Nome do arquivo" aria-placeholder="Nome do arquivo" required />
-        <input class="inp" id="desc" name="desc" type="text" placeholder="Descrição do arquivo" aria-placeholder="Descrição do arquivo" required />
+        <textarea class="inp" id="desc" name="desc" placeholder="Descrição do arquivo" aria-placeholder="Descrição do arquivo" required> </textarea>
         <input class="inp" id="arquivo" name="arquivo" type="file" placeholder="Arquivo a ser disponibilizado" aria-placeholder="Arquivo a ser disponibilizado" required />
         <input class="submit" id="submit" type="submit" placeholder="Adicionar ao acervo" aria-placeholder="Adicionar ao acervo" required />
       </form>
@@ -53,13 +55,16 @@ if (!isset($_SESSION["admin"])) {
      <div class="descricao">
         ' . $row["descricao"] . '
     </div>
-    <button 
-    class="downloadBtn" 
-    href="' . $row["arquivo"] . '" 
-     download="' . $row["nome"] . '"
-    >
-      Baixar
-     </button>
+    <a href="./download.php?arquivo=' . $row["nome"] . '&id=' . $row["lid"] . '">    
+      <button class="downloadBtn">
+        Baixar
+      </button>
+    </a>
+    <a href="./delLivro.php?arquivo=' . $row["nome"] . '&id=' . $row["lid"] . '">    
+      <button class="deleteBtn">
+        Deletar livro
+      </button>
+    </a>
     </section>
         ';
           }
@@ -76,7 +81,6 @@ if (!isset($_SESSION["admin"])) {
   </main>
   <footer>
     Projeto desenvolvido por: mahzze
-    <a href="https://github.com/mahzze/acervo-estudantil-teresa-nunes.git">Código fonte aqui</a>
   </footer>
   <script src="./modal.js"></script>
 </body>

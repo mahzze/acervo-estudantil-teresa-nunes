@@ -30,3 +30,10 @@
 a {
   text-decoration: none;
 }
+
+.logo {
+  margin-top: 5vh;
+  font-weight: 600;
+  font-size:3rem;
+  font-family: Coolvetica, sans-serif;
+}

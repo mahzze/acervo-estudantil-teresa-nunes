@@ -1,7 +1,3 @@
-CREATE DATABASE acervo_teresa_nunes;
-
-USE acervo_teresa_nunes;
-
 CREATE TABLE usuarios (
   	uid INT AUTO_INCREMENT PRIMARY KEY,
     curso VARCHAR(30),
@@ -11,8 +7,10 @@ CREATE TABLE usuarios (
 );
 
 CREATE TABLE livros (
-	nome VARCHAR(40),
-	arquivo LONGBLOB,
+  lid INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(40),
+  arquivo LONGBLOB,
+  tipo VARCHAR(30),
 	descricao VARCHAR(300)
 );
 

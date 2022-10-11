@@ -18,38 +18,38 @@ include "connection.php";
   <?php
   if (isset($_SESSION["logged"])) {
     if (isset($_SESSION["admin"])) {
-      $admBtn = '<a href="./admin.php"><button>admin page</button></a>';
+      $admBtn = '<a href="./admin.php"><button class="hbtn">admin page</button></a>';
     }
 
     echo '
-  <header class="header">Logo</header>
-  <section>' . $admBtn . ' <br> <a href="./logout.php"><button>Desconectar</button></a></section>
-  <main class="container">';
+  <header>Logo</header>
+  <main class="container">  
+    <section class="button-holder">' . $admBtn . ' <a href="./logout.php"><button class="hbtn">Desconectar</button></a></section>
+    <section class="cards-wrapper">
+    ';
 
     if ($query = $connection->query("SELECT * FROM livros")) {
       if ($query->num_rows > 0) {
-        while ($row = $query->fetch_assoc()) {
+        while ($row = $query->fetch_object()) {
 
-          echo '
-    <section class="card">
-    <div class="image">
+          echo "
+    <section class='card'>
+    <div class='image'>
     
     </div>
-    <div class="nome">
-      ' . $row["nome"] . '  
+    <div class='nome'>
+      $row->nome  
     </div>
-     <div class="descricao">
-        ' . $row["descricao"] . '
+    <div class='descricao'>
+      $row->descricao 
     </div>
-    <button 
-    class="downloadBtn" 
-    href="' . $row["arquivo"] . '" 
-     download="' . $row["nome"] . '"
-    >
-      Baixar
-     </button>
+    <a href='./download.php?arquivo=$row->nome&id=$row->lid'>      
+      <button class='downloadBtn'>
+        Baixar
+      </button>
+    </a>
     </section>
-        ';
+        ";
         }
       } else {
         echo '
@@ -59,8 +59,9 @@ include "connection.php";
       }
     }
     echo '
+  </section>
   </main>
-  <footer class="footer">Footer</footer>
+  <footer>alpha</footer>
   ';
   } else {
     echo '

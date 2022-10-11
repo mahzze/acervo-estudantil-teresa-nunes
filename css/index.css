@@ -1,6 +1,6 @@
 @import "./geral.css";
 
-body{
+body {
   background: linear-gradient(135deg, var(--back-color), var(--extra-color));
   background-attachment: fixed;
   top: 0;
@@ -13,67 +13,85 @@ body{
   align-items: center;
 }
 
-.header {
-    top: 0;
-    min-width: 100vw;
-    min-height: 20vh;
+header {
+  top: 0;
+  width: 100vw;
+  max-height: 10vh;
 }
 
 .footer {
-    bottom: 0;
-    min-width: 100vw;
-    min-height: 20vh;
+  bottom: 0;
+  min-width: 100vw;
+  min-height: 5vh;
 }
 
 /* LOGGED IN */
 .container {
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    background: #fff;
-    min-width: clamp(70%, 800px, 90vw);
-    min-height: 60vh;
+  margin: 5vh 0;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  min-width: clamp(70%, 800px, 90vw);
+  min-height: 60vh;
+  border-radius: 14px;
+}
+
+.button-holder {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 2.5% 0;
+}
+
+.hbtn {
+  max-width: 80%;
+  margin: 5%;
+  background: var(--primary-color);
+  transition: ease-in-out 300ms;
+}
+
+.hbtn:hover {
+
 }
 
 /* UNLOGGED */
 .loginMain {
-    background: #1E1E1E;
-    display: flex;
-    flex-direction: column;
-    padding: 10% 0;
-    height: 60%;
-    width: 70%;
-    border-radius: 14px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  background: #1E1E1E;
+  display: flex;
+  flex-direction: column;
+  padding: 10% 0;
+  height: 60%;
+  width: 70%;
+  border-radius: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .inputs {
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 1rem;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 1rem;
 }
 
-.inputs input{
-    width: 70%;
-    border-radius: 50px;
-    margin-bottom: .5rem;
+.inputs input {
+  width: 70%;
+  border-radius: 50px;
+  margin-bottom: .5rem;
 }
 
-.input:last-child(){
-    margin-bottom: 5%;
+.input:last-child() {
+  margin-bottom: 5%;
 }
 
 .textReg {
-    color:var(--extra-color);
+  color:var(--extra-color);
 }
 
 .linkReg {
-    color: var(--accent-color);
+  color: var(--accent-color);
 }

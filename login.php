@@ -13,12 +13,6 @@ if ($query->bind_result($resSenha)) {
   while ($query->fetch()) {
     $hash = $resSenha;
   }
-  echo '  
-  <script type="text/javascript">
-    window.alert("combinação inválida de usuario/ID/senha");
-    window.location.href = "../index.php"; 
-  </script>
-  ';
 
   if (password_verify($senha, $hash)) {
     session_start();
@@ -32,5 +26,12 @@ if ($query->bind_result($resSenha)) {
       window.location.href = "../index.php";
     </script>
     ';
+  } else {
+    echo '  
+  <script type="text/javascript">
+    window.alert("combinação inválida de usuario/ID/senha");
+    window.location.href = "../index.php"; 
+  </script>
+  ';
   }
 }
