@@ -5,40 +5,45 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 }
 
 .card{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 200px;
-  height: 200px;
+  padding: 1%;
+  width: 400px;
+  height: 400px;
   background-color: #fff;
-  box-shadow: rgba(50, 50, 50, 0.2) 4px 4px 20px;
+  box-shadow: rgba(50, 50, 50, 0.2) 4px 5px 25px;
+  border-radius: 10px;
 }
 
-@media handheld {
-  @media(max-width: 250px){
-    .card{
-      width: 90%;
-    }
-  }
-  @media (max-height: 250px){
-    .card{
-      height: 80%;
-    }
-  }
+.card .nome{
+  font-family: Coolvetica, poppins, sans-serif;
+  font-weight: 200;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.card .descricao{
+  font-family: poppins, sans-serif;
+  font-weight: 200;
+  font-size: 1rem;
+  letter-spacing: 1px;
 }
 
 @media screen{
-  @media (max-width: 500px){
-    .card{
-      width: 40%;
+  @media (max-width: 300px){
+    
+    .cards-wrapper{
+      justify-content: center;
     }
-  }
-  @media (max-height: 500px){
+
     .card{
-      height: 40%;
+      width: 90vw;
+      height: 90vh;
     }
   }
 }
@@ -52,6 +57,8 @@
   border: 3px solid var(--secondary-color);
   border-radius: 10px;
   color: #fff;
+  font-size: 2rem;
+  font-family: Straightler, poppins, sans-serif;
 }
 
 .deleteBtn {
@@ -63,5 +70,7 @@
   border: 3px solid rgba(140, 40, 50);
   border-radius: 10px;
   color: #fff;
+  font-size: 2rem;
+  font-family: Straightler, poppins, sans-serif;
 }
 

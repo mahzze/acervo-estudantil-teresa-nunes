@@ -18,13 +18,13 @@ include "connection.php";
   <?php
   if (isset($_SESSION["logged"])) {
     if (isset($_SESSION["admin"])) {
-      $admBtn = '<a href="./admin.php"><button class="hbtn">admin page</button></a>';
+      $admBtn = '<a href="./admin.php"><button>admin page</button></a>';
     }
 
     echo '
-  <header>Logo</header>
+  <header class="logo">Logo</header>
   <main class="container">  
-    <section class="button-holder">' . $admBtn . ' <a href="./logout.php"><button class="hbtn">Desconectar</button></a></section>
+    <section class="botoes">' . $admBtn . ' <a href="./logout.php"><button>Desconectar</button></a></section>
     <section class="cards-wrapper">
     ';
 

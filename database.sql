@@ -9,7 +9,6 @@ CREATE TABLE usuarios (
 CREATE TABLE livros (
   lid INT AUTO_INCREMENT PRIMARY KEY,
   nome VARCHAR(40),
-  arquivo LONGBLOB,
   tipo VARCHAR(30),
 	descricao VARCHAR(300)
 );

@@ -11,11 +11,33 @@ if (!isset($connection)) {
   echo '<script type="text/javascript">window.alert("Há algo de errado na conexão com o banco de dados")</script>';
 }
 
-$arquivo = addslashes(file_get_contents($_FILES["arquivo"]["tmp_name"]));
+//onde o arquivo será salvo
+$targetDIR = "livros/";
+$arquivo = $_FILES["arquivo"]["name"];
+$path = pathinfo($arquivo);
+$arq_nome = $path["filename"];
+$arq_ext  = $path["extension"];
+$path_arquivo_extensao = $targetDIR . $arq_nome . "." . $arq_ext;
 
-$query = $connection->prepare("INSERT INTO livros (nome, descricao, arquivo, tipo) VALUES (? , ? , ?, ?);");
-$query->bind_param("ssbs", $_POST["nome"], $_POST["desc"], $arquivo, $_FILES["arquivo"]["type"]);
-$query->send_long_data(2, $arquivo);
-$query->execute();
+// verifica se o arquivo já existe na pasta ./livros/ e impede o upload caso já exista
+if (file_exists($path_arquivo_extensao)) {
+  echo '
+  <script type="text/javascript">
+    window.alert("arquivo ' . $path_arquivo_extensao . ' já existe, upload cancelado");  
+  </script>
+  ';
+} else {
+  move_uploaded_file($_FILES["arquivo"]["tmp_name"], $path_arquivo_extensao);
 
-header("Location: ./admin.php");
+  echo '
+  <script type="text/javascript">
+    window.alert("upload executado com sucesso, arquivo salvo em: ' . $path_arquivo_extensao . '");  
+  </script>
+  ';
+
+  // adiciona informações sobre os livros no banco de dados
+  //$query = $connection->prepare("INSERT INTO livros (nome, descricao, tipo) VALUES (? , ?, ?);");
+  //$query->bind_param("ssbs", $_POST["nome"], $_POST["desc"], $_FILES["arquivo"]["type"]);
+  //$query->execute();
+}
+//header("Location: ./admin.php");

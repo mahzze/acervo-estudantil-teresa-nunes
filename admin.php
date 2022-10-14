@@ -21,11 +21,12 @@ if (!isset($_SESSION["admin"])) {
   <section class="logo">Logo</section>
   <main class="main">
     <div id="modal">
+      <button id="close" onclick="closeModal()">x</button>
       <form action="./addLivro.php" method="post" enctype="multipart/form-data">
         <input class="inp" id="nome" name="nome" type="text" placeholder="Nome do arquivo" aria-placeholder="Nome do arquivo" required />
         <textarea class="inp" id="desc" name="desc" placeholder="Descrição do arquivo" aria-placeholder="Descrição do arquivo" required> </textarea>
         <input class="inp" id="arquivo" name="arquivo" type="file" placeholder="Arquivo a ser disponibilizado" aria-placeholder="Arquivo a ser disponibilizado" required />
-        <input class="submit" id="submit" type="submit" placeholder="Adicionar ao acervo" aria-placeholder="Adicionar ao acervo" required />
+        <input class="submit" id="submit" type="submit" value="Adicionar ao acervo" aria-label="Adicionar ao acervo" />
       </form>
     </div>
     <section class="botoes">
@@ -62,7 +63,7 @@ if (!isset($_SESSION["admin"])) {
     </a>
     <a href="./delLivro.php?arquivo=' . $row["nome"] . '&id=' . $row["lid"] . '">    
       <button class="deleteBtn">
-        Deletar livro
+        Deletar
       </button>
     </a>
     </section>
@@ -80,7 +81,7 @@ if (!isset($_SESSION["admin"])) {
     </section>
   </main>
   <footer>
-    Projeto desenvolvido por: mahzze
+    Projeto desenvolvido por:<a href="https://github.com/mahzze"> mahzze</a>
   </footer>
   <script src="./modal.js"></script>
 </body>
