@@ -56,12 +56,12 @@ if (!isset($_SESSION["admin"])) {
      <div class="descricao">
         ' . $row["descricao"] . '
     </div>
-    <a href="./download.php?arquivo=' . $row["nome"] . '&id=' . $row["lid"] . '">    
+    <a href="./download.php?id=' . $row["lid"] . '">    
       <button class="downloadBtn">
         Baixar
       </button>
     </a>
-    <a href="./delLivro.php?arquivo=' . $row["nome"] . '&id=' . $row["lid"] . '">    
+    <a href="./delLivro.php?id=' . $row["lid"] . '">    
       <button class="deleteBtn">
         Deletar
       </button>

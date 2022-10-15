@@ -15,7 +15,7 @@ if (!isset($connection)) {
 $targetDIR = "livros/";
 $arquivo = $_FILES["arquivo"]["name"];
 $path = pathinfo($arquivo);
-$arq_nome = $path["filename"];
+$arq_nome = addslashes($path["filename"]);
 $arq_ext  = $path["extension"];
 $path_arquivo_extensao = $targetDIR . $arq_nome . "." . $arq_ext;
 
@@ -27,17 +27,17 @@ if (file_exists($path_arquivo_extensao)) {
   </script>
   ';
 } else {
-  move_uploaded_file($_FILES["arquivo"]["tmp_name"], $path_arquivo_extensao);
+  if (move_uploaded_file($_FILES["arquivo"]["tmp_name"], $path_arquivo_extensao)) {
+    echo '
+    <script type="text/javascript">
+      window.alert("upload executado com sucesso, arquivo salvo em: \n' . $path_arquivo_extensao . '");  
+    </script>
+    ';
 
-  echo '
-  <script type="text/javascript">
-    window.alert("upload executado com sucesso, arquivo salvo em: ' . $path_arquivo_extensao . '");  
-  </script>
-  ';
-
-  // adiciona informações sobre os livros no banco de dados
-  //$query = $connection->prepare("INSERT INTO livros (nome, descricao, tipo) VALUES (? , ?, ?);");
-  //$query->bind_param("ssbs", $_POST["nome"], $_POST["desc"], $_FILES["arquivo"]["type"]);
-  //$query->execute();
+    // adiciona informações sobre os livros no banco de dados
+    $query = $connection->prepare("INSERT INTO livros (nome, descricao, tipo, path) VALUES (? , ?, ?, ?);");
+    $query->bind_param("ssss", $_POST["nome"], $_POST["desc"], $_FILES["arquivo"]["type"], $path_arquivo_extensao);
+    $query->execute();
+  }
 }
-//header("Location: ./admin.php");
+header("Location: ./admin.php");

@@ -10,9 +10,25 @@ if (!isset($_SESSION["admin"])) {
 if (!isset($connection)) {
   echo '<script type="text/javascript">window.alert("Há algo de errado na conexão com o banco de dados")</script>';
 }
-
-$query = $connection->prepare("DELETE FROM livros where nome = ? AND lid = ?;");
-$query->bind_param("si", $_GET["arquivo"], $_GET["id"]);
+//query para receber o caminho do arquivo para poder apagar.
+$query = $connection->prepare("SELECT path FROM livros WHERE lid = ?;");
+$query->bind_param("i", $_GET["id"]);
 $query->execute();
+if ($query->bind_result($path)) {
+  $query->fetch();
+
+  if (unlink($path)) {
+    $query->free_result();
+    $query = $connection->prepare("DELETE FROM livros WHERE lid = ?;");
+    $query->bind_param("i", $_GET["id"]);
+    $query->execute();
+  } else {
+    echo '
+  <script type="text/javascript">
+    window.alert("Algo deu errado ao tentar deletar o arquivo")
+  </script>
+  ';
+  }
+}
 
 header("Location: ./admin.php");
