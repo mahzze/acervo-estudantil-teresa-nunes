@@ -13,7 +13,10 @@ if (!isset($connection)) {
 
 //onde o arquivo será salvo
 $targetDIR = "livros/";
-chmod($targetDIR, 0777);
+//cria a pasta livros caso ela não exista
+if (!is_dir($targetDIR)) {
+  mkdir($targetDIR);
+}
 
 $arquivo = $_FILES["arquivo"]["name"];
 $path = pathinfo($arquivo);
@@ -37,8 +40,8 @@ if (file_exists($path_arquivo_extensao)) {
     ';
 
     // adiciona informações sobre os livros no banco de dados
-    $query = $connection->prepare("INSERT INTO livros (nome, descricao, tipo, path) VALUES (? , ?, ?, ?);");
-    $query->bind_param("ssss", $_POST["nome"], $_POST["desc"], $_FILES["arquivo"]["type"], $path_arquivo_extensao);
+    $query = $connection->prepare("INSERT INTO livros (nome, descricao, categoria, tipo, path) VALUES (? , ?, ?, ?, ?);");
+    $query->bind_param("sssss", $_POST["nome"], $_POST["desc"], $_POST["categoria"], $_FILES["arquivo"]["type"], $path_arquivo_extensao);
     $query->execute();
   }
 }

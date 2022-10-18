@@ -1,7 +1,7 @@
 @import "./geral.css";
 
 body {
-  background: linear-gradient(135deg, var(--back-color), var(--extra-color));
+  background: var(--back-color); 
   background-attachment: fixed;
   top: 0;
   bottom: 0;

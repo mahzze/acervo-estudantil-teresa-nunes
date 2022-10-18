@@ -8,8 +8,8 @@ $senha = $_POST["senha"];
 
 $senha = password_hash($senha, PASSWORD_BCRYPT, array(PASSWORD_BCRYPT_DEFAULT_COST));
 
-$query = $connection->prepare("INSERT INTO usuarios(curso, nome, senha) VALUES (?,?,?);");
-$query->bind_param("sss", $curso, $nome, $senha);
+$query = $connection->prepare("INSERT INTO usuarios(curso, nome, email, senha) VALUES (?,?,?,?);");
+$query->bind_param("ssss", $curso, $nome, $email, $senha);
 $query->execute();
 
 // código para enviar emails, por algum motivo não funciona

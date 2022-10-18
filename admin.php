@@ -26,6 +26,13 @@ if (!isset($_SESSION["admin"])) {
         <input class="inp" id="nome" name="nome" type="text" placeholder="Nome do arquivo" aria-placeholder="Nome do arquivo" required />
         <textarea class="inp" id="desc" name="desc" placeholder="Descrição do arquivo" aria-placeholder="Descrição do arquivo" required> </textarea>
         <input class="inp" id="arquivo" name="arquivo" type="file" placeholder="Arquivo a ser disponibilizado" aria-placeholder="Arquivo a ser disponibilizado" required />
+        <select name="categoria" placeholder="Categoria" required>
+          <option value="Humanas">Humanas</option>
+          <option value="Exatas">Exatas</option>
+          <option value="Biológicas">Biológicas</option>
+          <option value="Cursos">Cursos</option>
+          <option value="Diversos">Diversos</option>
+        </select>
         <input class="submit" id="submit" type="submit" value="Adicionar ao acervo" aria-label="Adicionar ao acervo" />
       </form>
     </div>
@@ -46,27 +53,27 @@ if (!isset($_SESSION["admin"])) {
           while ($row = $query->fetch_assoc()) {
 
             echo '
-    <section class="card">
-    <div class="image">
-    
-    </div>
-    <div class="nome">
-      ' . $row["nome"] . '  
-    </div>
-     <div class="descricao">
-        ' . $row["descricao"] . '
-    </div>
-    <a href="./download.php?id=' . $row["lid"] . '">    
-      <button class="downloadBtn">
-        Baixar
-      </button>
-    </a>
-    <a href="./delLivro.php?id=' . $row["lid"] . '">    
-      <button class="deleteBtn">
-        Deletar
-      </button>
-    </a>
-    </section>
+      <section class="card">
+      <div class="image">
+      
+      </div>
+      <div class="nome">
+        ' . $row["nome"] . '  
+      </div>
+       <div class="descricao">
+          ' . $row["descricao"] . '
+      </div>
+      <a href="./download.php?id=' . $row["lid"] . '">    
+        <button class="downloadBtn">
+          Baixar
+        </button>
+      </a>
+      <a href="./delLivro.php?id=' . $row["lid"] . '">    
+        <button class="deleteBtn">
+          Deletar
+        </button>
+      </a>
+      </section>
         ';
           }
         } else {
