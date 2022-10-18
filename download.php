@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
   $query = $connection->query("SELECT path, tipo FROM livros WHERE lid = " . $livro_id . ";");
   if ($query->num_rows > 0) {
     $row = $query->fetch_object();
-
+    chmod("livros/", 0777);
     // método que faz uso do file system.
     header('Content-Description: File Transfer');
     header('Content-Type: ' . $row->tipo);

@@ -2,14 +2,14 @@
 require("./connection.php");
 
 $nome  = $_POST["nome"];
-$uid   = $_POST["uid"];
+$email = $_POST["email"];
 $senha = $_POST["senha"];
 
-$query = $connection->prepare("SELECT senha FROM usuarios WHERE uid = ? AND nome = ?");
-$query->bind_param("ss", $uid, $nome);
+$query = $connection->prepare("SELECT uid, senha FROM usuarios WHERE email = ? AND nome = ?");
+$query->bind_param("ss", $email, $nome);
 $query->execute();
 
-if ($query->bind_result($resSenha)) {
+if ($query->bind_result($uid, $resSenha)) {
   while ($query->fetch()) {
     $hash = $resSenha;
   }

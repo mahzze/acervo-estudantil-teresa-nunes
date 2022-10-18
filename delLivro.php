@@ -17,6 +17,8 @@ $query->execute();
 if ($query->bind_result($path)) {
   $query->fetch();
 
+  chmod("livros/", 0777);
+
   if (unlink($path)) {
     $query->free_result();
     $query = $connection->prepare("DELETE FROM livros WHERE lid = ?;");

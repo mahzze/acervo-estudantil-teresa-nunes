@@ -13,6 +13,8 @@ if (!isset($connection)) {
 
 //onde o arquivo será salvo
 $targetDIR = "livros/";
+chmod($targetDIR, 0777);
+
 $arquivo = $_FILES["arquivo"]["name"];
 $path = pathinfo($arquivo);
 $arq_nome = addslashes($path["filename"]);

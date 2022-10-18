@@ -18,4 +18,4 @@ INSERT INTO usuarios (
   uid,
   nome,
   senha
-) VALUES (0, "admin", "$2y$10$Ocv2ZmDnjf3s6i8hfMPk9.RFP2qlEAjqMyboW5yYg2SKXH1Qu59iy" );
+) VALUES (0, "admin", "admin@etec.sp.gov.br", "$2y$10$Ocv2ZmDnjf3s6i8hfMPk9.RFP2qlEAjqMyboW5yYg2SKXH1Qu59iy" );
