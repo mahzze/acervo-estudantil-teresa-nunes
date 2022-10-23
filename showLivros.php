@@ -1,24 +1,28 @@
 <?php
 require "./connection.php";
+if (!isset($_GET["cat"])) header("Location: ./index.php");
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title></title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
-  </head>
-  <body>
-  <section class="wrapper">
-    
-<?php
-$result = $connection->query("SELECT lid, nome, descricao, FROM livros");
-if ($query->num_rows > 0) {
-  while ($row = $query->fetch_assoc()) {
 
-    echo '
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/cards.css">
+</head>
+
+<body>
+  <section class="wrapper">
+
+    <?php
+    $query = $connection->query("SELECT lid, nome, descricao FROM livros WHERE categoria = " . $_GET["cat"] . ";");
+    if ($query->num_rows > 0) {
+      while ($row = $query->fetch_assoc()) {
+
+        echo '
     <section class="card">
       <div class="image">
       </div>
@@ -33,16 +37,12 @@ if ($query->num_rows > 0) {
           Baixar
         </button>
       </a>
-      <a href="./delLivro.php?id=' . $row["lid"] . '">
-        <button class="deleteBtn">
-          Deletar
-        </button>
-      </a>
     </section>
     ';
-  }
-}
-?>
-  </section> 
-  </body>
+      }
+    }
+    ?>
+  </section>
+</body>
+
 </html>

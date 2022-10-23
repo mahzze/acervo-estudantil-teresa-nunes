@@ -1,6 +1,7 @@
 CREATE TABLE usuarios (
   	uid INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(45) NOT NULL,
+    curso VARCHAR(20) NOT NULL,
     email VARCHAR(45) NOT NULL,
     senha VARCHAR(72) NOT NULL
 );
@@ -18,5 +19,7 @@ INSERT INTO usuarios (
   uid,
   nome,
   email,
+  curso,
   senha
-) VALUES (1, "admin", "admin@etec.sp.gov.br", "$2y$10$Ocv2ZmDnjf3s6i8hfMPk9.RFP2qlEAjqMyboW5yYg2SKXH1Qu59iy" );
+) VALUES (1, "admin", "admin@etec.sp.gov.br", "administracao","$2y$10$IW6YdjAZBV6gfbWC4mr64uivJlV1BAN1ODix0yK213Osq4Lw6a0Qy");
+

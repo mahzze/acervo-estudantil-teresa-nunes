@@ -98,6 +98,7 @@ body{
   color: #fff;
   font-weight: 600;
   font-size: 1em;
+  display: none; 
 }
 
 #modal #close{

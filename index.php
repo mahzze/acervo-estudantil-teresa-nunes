@@ -3,6 +3,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,21 +17,21 @@ session_start();
   if (isset($_SESSION["logged"])) {
     $content = ' <a href="./logout.php"><button>Desconectar</button></a>';
     if (isset($_SESSION["admin"])) {
-      $content += '<a href="./admin.php"><button>admin page</button></a>';
+      $content = $content . '<a href="./admin.php"><button>admin page</button></a>';
     }
   } else {
-    $content = '<a href="./loginForm.html"><button></button></a>';
+    $content = '<a href="./loginForm.html"><button>Login</button></a>';
   }
 
   echo $content;
-?>
-  
-  <a href="./showLivros.php?cat='humanas'"><button>Humanas</button></a>
-  <a href="./showLivros.php?cat='exatas'"><button>Exatas</button></a>
-  <a href="./showLivros.php?cat='biologicas'"><button>Biologicas</button></a>
-  <a href="./showLivros.php?cat='curso'"><button>Cursos</button></a>
-  <a href="./showLivros.php?cat='diverso'"><button>Diversos</button></a>
+  ?>
 
-  </body>
+  <a href="./showLivros.php?cat='Humanas'"><button>Humanas</button></a>
+  <a href="./showLivros.php?cat='Exatas'"><button>Exatas</button></a>
+  <a href="./showLivros.php?cat='Biologicas'"><button>Biologicas</button></a>
+  <a href="./showLivros.php?cat='Curso'"><button>Cursos</button></a>
+  <a href="./showLivros.php?cat='Diversos'"><button>Diversos</button></a>
+
+</body>
 
 </html>

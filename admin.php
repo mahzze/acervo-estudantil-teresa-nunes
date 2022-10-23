@@ -23,10 +23,11 @@ if (!isset($_SESSION["admin"])) {
     <div id="modal">
       <button id="close" onclick="closeModal()">x</button>
       <form action="./addLivro.php" method="post" enctype="multipart/form-data">
-        <input class="inp" id="nome" name="nome" type="text" placeholder="Nome do arquivo" aria-placeholder="Nome do arquivo" required />
-        <textarea class="inp" id="desc" name="desc" placeholder="Descrição do arquivo" aria-placeholder="Descrição do arquivo" required> </textarea>
-        <input class="inp" id="arquivo" name="arquivo" type="file" placeholder="Arquivo a ser disponibilizado" aria-placeholder="Arquivo a ser disponibilizado" required />
-        <select name="categoria" placeholder="Categoria" required>
+        <input class="inp" id="nome" name="nome" type="text" placeholder="Nome do arquivo" aria-placeholder="Nome do arquivo" onchange="verifySubmit()" required />
+        <textarea class="inp" id="desc" name="desc" placeholder="Descrição do arquivo" aria-placeholder="Descrição do arquivo" onchange="verifySubmit()" required> </textarea>
+        <input class="inp" id="arquivo" name="arquivo" type="file" placeholder="Arquivo a ser disponibilizado" aria-placeholder="Arquivo a ser disponibilizado" onchange="verifySubmit()" required />
+        <select class="inp" id="categoria" name="categoria" placeholder="Categoria" onchange="verifySubmit()" required>
+          <option value="" selected disabled>Escolha a categoria do livro</option>
           <option value="Humanas">Humanas</option>
           <option value="Exatas">Exatas</option>
           <option value="Biológicas">Biológicas</option>

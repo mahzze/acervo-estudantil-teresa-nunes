@@ -11,10 +11,10 @@
 
 <body>
   <form action="./registro.php" method="post">
-    <input type="text" name="nome" placeholder="nome" aria-placeholder="nome">
-    <input type="email" name="email" placeholder="email" aria-placeholder="email">
-    <input type="text" name="curso" placeholder="curso" aria-placeholder="curso">
-    <input type="password" name="senha" placeholder="senha" aria-placeholder="senha">
+    <input type="text" name="nome" placeholder="nome" aria-placeholder="nome" required aria-required="true">
+    <input type="email" name="email" placeholder="email" aria-placeholder="email" required aria-required="true">
+    <input type="text" name="curso" placeholder="curso">
+    <input type="password" name="senha" placeholder="senha" aria-placeholder="senha" required aria-required="true">
     <input type="submit" value="Cadastrar">
   </form>
 </body>
