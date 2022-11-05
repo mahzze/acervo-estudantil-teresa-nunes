@@ -5,11 +5,11 @@ $nome  = $_POST["nome"];
 $email = $_POST["email"];
 $senha = $_POST["senha"];
 
-$query = $connection->prepare("SELECT uid, senha FROM usuarios WHERE email = ? AND nome = ?");
+$query = $connection->prepare("SELECT uid, senha, curso FROM usuarios WHERE email = ? AND nome = ?");
 $query->bind_param("ss", $email, $nome);
 $query->execute();
 
-$query->bind_result($uid, $hash);
+$query->bind_result($uid, $hash, $curso);
 $query->fetch();
 
 if (password_verify($senha, $hash)) {
@@ -17,10 +17,12 @@ if (password_verify($senha, $hash)) {
   $_SESSION["logged"] = true;
   if ($uid == 1) {
     $_SESSION["admin"] = true;
+  } else {
+    $_SESSION["curso"] = $curso;
   }
   echo '  
     <script type="text/javascript">
-      window.alert("Conectado com sucesso!");
+      window.alert("Conectado com sucesso! Curso: "' . $_SESSION["curso"] . ');
       window.location.href = "./index.php";
     </script>
   ';

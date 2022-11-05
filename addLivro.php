@@ -11,13 +11,7 @@ if (!isset($connection)) {
   echo '<script type="text/javascript">window.alert("Há algo de errado na conexão com o banco de dados")</script>';
 }
 
-//onde o arquivo será salvo
 $targetDIR = "livros/";
-//cria a pasta livros caso ela não exista
-if (!is_dir($targetDIR)) {
-  mkdir($targetDIR);
-}
-
 $arquivo = $_FILES["arquivo"]["name"];
 $path = pathinfo($arquivo);
 $arq_nome = addslashes($path["filename"]);
@@ -38,11 +32,30 @@ if (file_exists($path_arquivo_extensao)) {
       window.alert("upload executado com sucesso, arquivo salvo em: \n' . $path_arquivo_extensao . '");  
     </script>
     ';
-
-    // adiciona informações sobre os livros no banco de dados
-    $query = $connection->prepare("INSERT INTO livros (nome, descricao, categoria, tipo, path) VALUES (? , ?, ?, ?, ?);");
-    $query->bind_param("sssss", $_POST["nome"], $_POST["desc"], $_POST["categoria"], $_FILES["arquivo"]["type"], $path_arquivo_extensao);
-    $query->execute();
+  } else {
+    echo '
+    <script type="text/javascript">
+      window.alert("Algo deu errado com o seu Upload");
+    </script>
+    ';
   }
 }
+
+// adiciona as informações ao banco de dados
+// originalmente, isso só era executado quando
+// o livro é adicionado à pasta livros, mas foi
+// trocada para que mais de um curso possa acessar o mesmo livro  
+
+if (file_exists($path_arquivo_extensao)) {
+  $query = $connection->prepare("INSERT INTO livros (nome, descricao, categoria, tipo, path) VALUES (? , ?, ?, ?, ?);");
+
+  if ($_POST["categoria"] != "Cursos") {
+    $query->bind_param("sssss", $_POST["nome"], $_POST["desc"], $_POST["categoria"], $_FILES["arquivo"]["type"], $path_arquivo_extensao);
+  } else {
+    $query->bind_param("sssss", $_POST["nome"], $_POST["desc"], $_POST["curso"], $_FILES["arquivo"]["type"], $path_arquivo_extensao);
+  }
+
+  $query->execute();
+}
+
 header("Location: ./admin.php");
