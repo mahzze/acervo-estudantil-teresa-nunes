@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Login</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
-  </head>
-  <body>
-  
+
+<head>
+  <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/registro.css" rel="stylesheet">
+</head>
+
+<body>
+
   <main class="loginMain">
     <form class="inputs" action="./login.php" method="post">
-      <input type="text" name="nome" placeholder="Nome" aria-placeholder="Nome">
-      <input type="email" name="email" placeholder="Email" aria-placeholder="Email">
-      <input type="password" name="senha" placeholder="Senha" aria-placeholder="Senha">
-      <input type="submit" value="Conectar">
+      <input class="input" type="text" name="nome" placeholder="Nome" aria-placeholder="Nome">
+      <input class="input" type="email" name="email" placeholder="Email" aria-placeholder="Email">
+      <input class="input" type="password" name="senha" placeholder="Senha" aria-placeholder="Senha">
+      <input class="submit" type="submit" value="Conectar">
     </form>
     <div>
-      <p class="textReg">Não possui um acesso? <a class="linkReg" href="./registroForm.html">Cadastre-se aqui</a></p>
+      <p class="textReg">Não possui um acesso? <a class="linkReg" href="./registroForm.php">Cadastre-se aqui</a></p>
     </div>
   </main>
 
-  </body>
+</body>
+
 </html>

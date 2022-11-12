@@ -10,27 +10,35 @@ if (!isset($_SESSION["admin"])) {
 if (!isset($connection)) {
   echo '<script type="text/javascript">window.alert("Há algo de errado na conexão com o banco de dados")</script>';
 }
-//query para receber o caminho do arquivo para poder apagar.
-$query = $connection->prepare("SELECT path FROM livros WHERE lid = ?;");
-$query->bind_param("i", $_GET["id"]);
-$query->execute();
-if ($query->bind_result($path)) {
-  $query->fetch();
 
-  chmod("livros/", 0777);
+$res = $connection->query("SELECT path, categoria FROM livros WHERE lid = " . $_GET["id"]);
+$res->fetch_object();
 
-  if (unlink($path)) {
-    $query->free_result();
-    $query = $connection->prepare("DELETE FROM livros WHERE lid = ?;");
-    $query->bind_param("i", $_GET["id"]);
-    $query->execute();
-  } else {
-    echo '
-  <script type="text/javascript">
-    window.alert("Algo deu errado ao tentar deletar o arquivo")
-  </script>
-  ';
+if ($connection->query("SELECT categoria FROM livros WHERE path=" . $res->path)->num_rows < 2) {
+
+  $query = $connection->prepare("SELECT path FROM livros WHERE lid = ?;");
+  $query->bind_param("i", $_GET["id"]);
+  $query->execute();
+  if ($query->bind_result($path)) {
+    $query->fetch();
+
+    if (unlink($path)) {
+      $query->free_result();
+      $query = $connection->prepare("DELETE FROM livros WHERE lid = ?;");
+      $query->bind_param("i", $_GET["id"]);
+      $query->execute();
+    } else {
+      echo '
+      <script type="text/javascript">
+        window.alert("Algo deu errado ao tentar deletar o arquivo")
+      </script>
+      ';
+    }
   }
+} else {
+  $query = $connection->prepare("DELETE FROM livros WHERE lid = ?;");
+  $query->bind_param("i", $_GET["id"]);
+  $query->execute();
 }
 
 header("Location: ./admin.php");

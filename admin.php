@@ -18,10 +18,12 @@ if (!isset($_SESSION["admin"])) {
 </head>
 
 <body>
-  <section class="logo">Logo</section>
+  <header class="logo"></header>
   <main class="main">
     <div class="modal" id="modalCursos">
       <button id="close" onclick="closeModalCursos()"></button>
+      <form action="./funcoesCursos.php">
+      </form>
     </div>
 
     <div class="modal" id="modalArquivo">
@@ -46,7 +48,6 @@ if (!isset($_SESSION["admin"])) {
           <option value="Diversos">Diversos</option>
         </select>
 
-        <!-- ADICIONAR OPÇÕES DE CURSOS NO BANCO DE DADOS E UM FORM PARA ADICIONAR E REMOVER CURSOS -->
         <select id="curso" name="curso" placeholder="curso" onchange="verifySubmit()">
           <option value="" selected disabled>Escolha o curso</option>
           <?php
@@ -68,6 +69,7 @@ if (!isset($_SESSION["admin"])) {
         Adicionar Arquivo
       </button>
 
+      <!-- ADICIONAR UM FORM PARA ADICIONAR E REMOVER CURSOS -->
       <button id="addModalCursos" onclick="addModalCursos()">
         Manusear Cursos
       </button>
@@ -86,7 +88,7 @@ if (!isset($_SESSION["admin"])) {
     </section>
     <section class="wrapper">
       <?php
-      if ($query = $connection->query("SELECT * FROM livros")) {
+      if ($query = $connection->query("SELECT * FROM livros ORDER BY categoria")) {
         if ($query->num_rows > 0) {
           while ($row = $query->fetch_assoc()) {
 

@@ -31,7 +31,7 @@ if (!($connection->query("SELECT * FROM livros;")->num_rows > 0)) {
     ('Quimica', 'livros/quimica.pdf', 'Exatas', ''),
     ('Clean Code', 'livros/clean_code.pdf', 'DS', ''),
     ('Nove Noites', 'livros/Nove noites romance (Bernardo Carvalho).pdf', 'Diversos', ''),
-    ('Fundamentos de instalações elétricas', 'livros/fundamentos_de_Instalacoes_eletricas.pdf', 'ELT', ''),
+    ('Fundamentos de instalações elétricas', 'livros/fundamentos_de_Instalacoes_eletricas.pdf', 'ELT', '');
     "
   );
 }

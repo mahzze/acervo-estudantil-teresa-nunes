@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-bottom: 1rem;
   padding: 1%;
   width: 400px;
   height: 400px;
@@ -49,12 +50,12 @@
 }
 
 .downloadBtn {
-  background: var(--secondary-color);
+  background: var(--dwnld-color);
   padding: 5%;
   line-height: 2%;
   width: 80%;
   height: 20%;
-  border: 3px solid var(--secondary-color);
+  border: 3px solid var(--dwnld-color);
   border-radius: 10px;
   color: #fff;
   font-size: 2rem;
@@ -62,15 +63,27 @@
 }
 
 .deleteBtn {
-  background: rgba(140, 40, 50);
+  background: var(--delet-color); 
   padding: 5%;
   line-height: 2%;
   width: 80%;
   height: 20%;
-  border: 3px solid rgba(140, 40, 50);
+  border: 3px solid var(--delet-color);  
   border-radius: 10px;
   color: #fff;
   font-size: 2rem;
   font-family: Straightler, poppins, sans-serif;
 }
 
+.readBtn {
+  background: var(--secondary-color); 
+  padding: 5%;
+  line-height: 2%;
+  width: 80%;
+  height: 20%;
+  border: 3px solid var(--secondary-color);  
+  border-radius: 10px;
+  color: #fff;
+  font-size: 2rem;
+  font-family: Straightler, poppins, sans-serif;
+}

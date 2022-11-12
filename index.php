@@ -30,7 +30,7 @@ session_start();
   <?php
   if (isset($_SESSION["curso"])) {
     echo '
-    <a href="./showLivros.php?cat=' . "Curso" . '"><button>Cursos</button></a>
+    <a href="./showLivros.php?cat=' . $_SESSION["curso"] . '"><button>Cursos</button></a>
     <a href="./showLivros.php?cat=' . "Diversos" . '"><button>Diversos</button></a>
   ';
   }

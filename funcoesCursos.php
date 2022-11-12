@@ -24,3 +24,5 @@ if ($op == "add") {
 if ($op == "del") {
   del($curso);
 }
+
+header("Location: ./admin.php");

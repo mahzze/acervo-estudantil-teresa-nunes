@@ -1,13 +1,10 @@
 #Acervo digital para materiais didáticos da etec teresa nunes<br>
 
-Data de desenvolvimento: 22/09/2022 - ??/??/????<br>
+Data de desenvolvimento: 22/09/2022 - 14/11/2022<br>
 
 #O que fazer:<br>
 . Organizar o design do site<br>
-. Login pelo email institucional<br>
-
-##Fixes<br>
-. Fix NGINX (erros 403 e 413)
+. Modificar cursos na admin
 
 ##Desenvolvido por: <br>
  ETEC Teresa Nunes, 3º Secretariado (2022) - ETIM<br>

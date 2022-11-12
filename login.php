@@ -20,17 +20,11 @@ if (password_verify($senha, $hash)) {
   } else {
     $_SESSION["curso"] = $curso;
   }
-  echo '  
-    <script type="text/javascript">
-      window.alert("Conectado com sucesso! Curso: "' . $_SESSION["curso"] . ');
-      window.location.href = "./index.php";
-    </script>
-  ';
+  header("Location: ./index.php");
 } else {
   echo '  
   <script type="text/javascript">
     window.alert("combinação inválida de usuario/ID/senha");
-    window.location.href = "./loginForm.html"; 
   </script>
   ';
 }

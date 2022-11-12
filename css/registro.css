@@ -1,0 +1,41 @@
+@import "./geral.css";
+
+body {
+  background: var(--back-color); 
+  background-attachment: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+form {
+  margin: 30vh;
+  width: 70vw;
+  height: 60%;
+  display: grid;
+  gap: 20%;
+}
+
+.input { 
+  border-radius: 10px;
+  height: 20px;
+  width: 100%;
+}
+
+.selectAndLabelWrapper {
+  width: 100%;
+}
+
+.label {
+  width: 20%;
+  color: var(--accent-color);
+}
+
+.select {
+  border-radius: 10px;
+  width: 80%;
+  height: 20px;
+}

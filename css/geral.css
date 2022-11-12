@@ -28,6 +28,8 @@
     --extra-color     : #e9ecef; /* nome no BOOTSTRAP: gray200 */
     --back-color      : #6c757d; /* nome no BOOTSTRAP: gray600 */
     --mdlBck-color    : #212529; /* nome no BOOTSTRAP: gray900 */
+    --dwnld-color     : #65C0BC;
+    --delet-color     : rgba(140, 40, 50);    
 }
 
 a {
