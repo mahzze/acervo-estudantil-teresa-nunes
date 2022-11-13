@@ -10,20 +10,27 @@ if (!isset($_GET["cat"])) header("Location: ./index.php");
   <title></title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/index.css" rel="stylesheet">
+  <link href="css/admin.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/cards.css">
 </head>
 
 <body>
-  <a href="./index.php"><button>Voltar à página inicial</button></a>
-  <section class="wrapper">
+  <div class="logo"></div>
+  <main class="main">
+    <a href="./index.php">
+      <button class="botao">
+        Retornar aos links
+      </button>
+    </a>
 
-    <?php
-    $query = $connection->query("SELECT lid, path, nome, descricao FROM livros WHERE categoria = " . $_GET["cat"] . ";");
-    if ($query->num_rows > 0) {
-      while ($row = $query->fetch_assoc()) {
+    <section class="wrapper">
+      <?php
+      $query = $connection->query("SELECT lid, path, nome, descricao FROM livros WHERE categoria = " . $_GET["cat"] . ";");
+      if ($query->num_rows > 0) {
+        while ($row = $query->fetch_assoc()) {
 
-        echo '
+          echo '
+
     <section class="card">
       <div class="image">
       </div>
@@ -45,10 +52,11 @@ if (!isset($_GET["cat"])) header("Location: ./index.php");
       </a>
     </section>
     ';
+        }
       }
-    }
-    ?>
-  </section>
+      ?>
+    </section>
+  </main>
 </body>
 
 </html>

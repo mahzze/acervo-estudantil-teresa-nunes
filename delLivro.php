@@ -12,9 +12,9 @@ if (!isset($connection)) {
 }
 
 $res = $connection->query("SELECT path, categoria FROM livros WHERE lid = " . $_GET["id"]);
-$res->fetch_object();
+$resultado = $res->fetch_object();
 
-if ($connection->query("SELECT categoria FROM livros WHERE path=" . $res->path)->num_rows < 2) {
+if ($connection->query("SELECT categoria FROM livros WHERE path='" . $resultado->path . "';")->num_rows == 1) {
 
   $query = $connection->prepare("SELECT path FROM livros WHERE lid = ?;");
   $query->bind_param("i", $_GET["id"]);

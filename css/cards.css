@@ -1,13 +1,5 @@
 @import "./geral.css";
 
-.cards-wrapper {
-  display:flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-
 .card{
   display: flex;
   flex-direction: column;
@@ -17,7 +9,7 @@
   width: 400px;
   height: 400px;
   background-color: #fff;
-  box-shadow: rgba(50, 50, 50, 0.2) 4px 5px 25px;
+  box-shadow: 0 0 5px var(--shadow-color);
   border-radius: 10px;
 }
 
@@ -38,7 +30,7 @@
 @media screen{
   @media (max-width: 300px){
     
-    .cards-wrapper{
+    .card-wrapper{
       justify-content: center;
     }
 
