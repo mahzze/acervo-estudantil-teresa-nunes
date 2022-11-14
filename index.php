@@ -24,13 +24,13 @@ session_start();
   }
   ?>
 
-  <a href="./showLivros.php?cat='Humanas'"><button>Humanas</button></a>
-  <a href="./showLivros.php?cat='Exatas'"><button>Exatas</button></a>
-  <a href="./showLivros.php?cat='Biologicas'"><button>Biologicas</button></a>
+  <a href='./showLivros.php?cat=Humanas'><button>Humanas</button></a>
+  <a href='./showLivros.php?cat=Exatas'><button>Exatas</button></a>
+  <a href='./showLivros.php?cat=Biologicas'><button>Biologicas</button></a>
   <?php
   if (isset($_SESSION["curso"])) {
     echo '
-    <a href="./showLivros.php?cat=' . $_SESSION["curso"] . '"><button>Cursos</button></a>
+    <a href="./showLivros.php?cat=' . $_SESSION["curso"] . '"><button>Curso</button></a>
     <a href="./showLivros.php?cat=' . "Diversos" . '"><button>Diversos</button></a>
   ';
   }

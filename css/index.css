@@ -29,6 +29,12 @@ a button {
   transition: 200ms ease-out;
 }
 
+a button:hover {
+  transform: scale(1.2);
+  box-shadow: none;
+  cursor: pointer;
+}
+
 a, a button {
   border: 0;
   border-radius: 6px;

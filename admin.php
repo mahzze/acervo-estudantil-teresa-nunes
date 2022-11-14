@@ -45,7 +45,7 @@ if (!isset($_SESSION["admin"])) {
           }
           ?>
         </select>
-        <input class="submit" id="submitCursoDel" type="submit" value="Remover Curso" aria-label="Remover curso" />
+        <input class="submitCurso" id="submitCursoDel" type="submit" value="Remover Curso" aria-label="Remover curso" />
       </form>
     </div>
 

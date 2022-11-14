@@ -14,7 +14,7 @@ require "./connection.php";
 </head>
 
 <body>
-  <form action="./registro.php" method="post">
+  <form class="inputs" action="./registro.php" method="post">
     <input class="input" type="text" name="nome" placeholder="nome" aria-placeholder="nome" maxlength="45" required aria-required="true">
     <input class="input" type="email" name="email" placeholder="email" aria-placeholder="email" maxlength="45" required aria-required="true">
     <div class="selectAndLabelWrapper">

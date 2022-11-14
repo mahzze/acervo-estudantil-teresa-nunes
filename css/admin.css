@@ -118,6 +118,7 @@ body{
   font-weight: 600;
   font-size: 1em;
   display: none; 
+  transition: 250ms ease-out;
 }
 
 input[type="file"] {
@@ -183,16 +184,21 @@ label {
   height: 80%;
 }
 
-.submitCurso{
+.submitCurso {
   background: #dedede;
   width: 80%;
   height: 10%;
-  background: var(--dwnld-color);
   border-radius: 20px;
   color: #fff;
   font-weight: 600;
   font-size: 1em;
   display: none; 
+  transition: 250ms ease-out;
+}
+
+.submit:hover, .submitCurso:hover {
+  transform: scale(1.2);  
+  cursor: pointer;
 }
 
 #submitCursoAdd {

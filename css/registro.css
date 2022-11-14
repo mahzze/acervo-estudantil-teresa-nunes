@@ -11,18 +11,20 @@ body {
   min-width: 100%;
 }
 
-form {
-  margin: 30vh;
+.inputs {
+  margin: 25vh;
   width: 70vw;
-  height: 60%;
+  height: 70%;
   display: grid;
-  gap: 20%;
+  gap: 25px;
 }
 
 .input { 
   border-radius: 10px;
-  height: 20px;
+  height: 3rem;
   width: 100%;
+  font-size: 1.5em; 
+  font-family: "Coolvetica";
 }
 
 .selectAndLabelWrapper {
@@ -37,5 +39,34 @@ form {
 .select {
   border-radius: 10px;
   width: 80%;
-  height: 20px;
+  height: 3rem;
+  font-size: 1.5em; 
+}
+
+.submit {
+  background: #dedede;
+  width: 100%;
+  height: 3rem;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  background: teal;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 600;
+  font-family: Coolvetica;
+  transition: 250ms ease-out;  
+}
+
+.submit:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.textReg {
+  font-size: 20px;
+}
+
+.textReg a {
+  color: var(--accent-color);
+  text-decoration: underline;
 }

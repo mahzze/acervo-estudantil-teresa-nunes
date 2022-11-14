@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,400&display=swap');
-
 @font-face {
     font-family: Coolvetica;
     src: url(./Fonts/coolvetica.otf)
@@ -31,6 +30,17 @@
     --dwnld-color     : #65C0BC;
     --delet-color     : rgba(140, 40, 50);    
     --shadow-color    : rgba(80, 60, 80, .9)
+}
+
+button {
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  transition: 250ms ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 a {

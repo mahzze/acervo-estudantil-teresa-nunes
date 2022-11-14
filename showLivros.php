@@ -25,7 +25,8 @@ if (!isset($_GET["cat"])) header("Location: ./index.php");
 
     <section class="wrapper">
       <?php
-      $query = $connection->query("SELECT lid, path, nome, descricao FROM livros WHERE categoria = " . $_GET["cat"] . ";");
+      $cat = $_GET["cat"];
+      $query = $connection->query("SELECT lid, path, nome, descricao FROM livros WHERE categoria =  '$cat';");
       if ($query->num_rows > 0) {
         while ($row = $query->fetch_assoc()) {
 

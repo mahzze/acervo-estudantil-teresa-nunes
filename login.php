@@ -27,4 +27,5 @@ if (password_verify($senha, $hash)) {
     window.alert("combinação inválida de usuario/ID/senha");
   </script>
   ';
+  header("Location: ./loginForm.html");
 }
