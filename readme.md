@@ -13,9 +13,9 @@ MYSQLPORT="3306"
 MYSQLDATABASE="acervo"
 ```
 as variaveis devem ter nomes iguais aos do exemplo acima, porém os valores podem ser diferentes.
-3. Baixe as dependencias com o composer (basta executar, na raiz do projeto: composer install).
-4. Execute o projeto com o seu servidor php favorito.
-
+3. Baixe as dependencias com o composer (basta executar, na raiz do projeto: composer install).<br>
+4. Execute o projeto com o seu servidor php favorito.<br>
+A primeira conta registrada se torna a conta de administrador
 
 ##### Desenvolvido por: <br>
  ETEC Teresa Nunes, Secretariado (2020 - 2022) - ETIM<br>
@@ -25,5 +25,5 @@ as variaveis devem ter nomes iguais aos do exemplo acima, porém os valores pode
 - Thayná Sousa<br>
 <br>
  ETEC de Vila Formosa, Desenvolvimento de Sistemas (2020 - 2022) - ETIM<br>
-- Matheus Souza Zanzin - programador<br>
+- *Matheus Souza Zanzin* - *programador*<br>
 

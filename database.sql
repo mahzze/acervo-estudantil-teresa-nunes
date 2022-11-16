@@ -23,14 +23,6 @@ CREATE TABLE livros (
   descricao VARCHAR(300)
 );
 
-INSERT INTO usuarios (
-  uid,
-  nome,
-  email,
-  curso,
-  senha
-) VALUES (1, "admin", "admin@etec.sp.gov.br", "SEC","$2y$10$IW6YdjAZBV6gfbWC4mr64uivJlV1BAN1ODix0yK213Osq4Lw6a0Qy");
-
 INSERT INTO cursos VALUES
 ("ADM"),
 ("AI"),
